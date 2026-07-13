@@ -1,4 +1,4 @@
-// Documentation Database Matrix for Rawmeleon
+
 const documentationData = [
     {
         category: "Core Serialization",
@@ -219,5 +219,26 @@ function renderDocs() {
 }
 
 
+// Native Clipboard Copy Engine
+function copyLoadstring() {
+    const rawLua = 'local RawmeleonInstaller = loadstring(game:HttpGet("https://raw.githubusercontent.com/CoolDolphim/Rawmeleon-Library/refs/heads/main/LUAModule/SRC.luau"))()';
+    
+    navigator.clipboard.writeText(rawLua).then(() => {
+        const btn = document.getElementById("copy-btn");
+        
+        // Visual indicator switch to confirm successful capture
+        btn.style.color = "var(--accent-green)";
+        btn.style.borderColor = "var(--accent-green)";
+        btn.style.background = "#1f242c";
+        
+        setTimeout(() => {
+            btn.style.color = "var(--text-main)";
+            btn.style.borderColor = "var(--border-color)";
+            btn.style.background = "#21262d";
+        }, 1200);
+    }).catch(err => {
+        console.error("Failed to copy source pipeline text: ", err);
+    });
+}
 
 document.addEventListener("DOMContentLoaded", renderDocs);
