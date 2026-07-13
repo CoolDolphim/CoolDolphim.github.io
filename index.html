@@ -25,24 +25,24 @@
         <p class="intro-text">
             Rawmeleon is a low-level binary layout framework built to bypass standard network diagnostic reflection hooks and script interface argument logs within Luau execution spaces.
         </p>
-        <!-- Loadstring Quick Copy Widget -->
-<div class="loadstring-container" style="background: var(--bg-sidebar); border: 1px solid var(--border-color); border-radius: 6px; padding: 0.75rem 1rem; margin-bottom: 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem;">
-    <div style="font-family: monospace; font-size: 0.9rem; color: var(--accent-green); overflow-x: auto; white-space: nowrap; width: 100%;">
-        <span class="keyword" style="color: #ff7b72;">local</span> RawmeleonInstaller = <span class="builtin" style="color: #79c0ff;">loadstring</span>(<span class="builtin" style="color: #79c0ff;">game</span>:<span class="builtin" style="color: #79c0ff;">HttpGet</span>(<span class="string" style="color: #a5d6ff;">"https://raw.githubusercontent.com/CoolDolphim/Rawmeleon-Library/refs/heads/main/LUAModule/SRC.luau"</span>))()
+
+<!-- Requirements Notice Banner -->
+<div class="notice-banner" style="background: rgba(242, 193, 46, 0.1); border: 1px solid #f2c12e; border-radius: 6px; padding: 0.75rem 1rem; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: space-between; font-size: 0.9rem;">
+    <div style="display: flex; align-items: center; gap: 0.5rem; color: #f2c12e;">
+        <span style="font-weight: bold;">Notice:</span> You must meet the requirements to launch Rawmeleon.
     </div>
-    <button id="copy-btn" onclick="copyLoadstring()" style="background: #21262d; border: 1px solid var(--border-color); border-radius: 6px; padding: 6px; cursor: pointer; color: var(--text-main); display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; flex-shrink: 0; transition: all 0.2s ease;">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7.5 3H14.6C16.8402 3 17.9603 3 18.816 3.43597C19.5686 3.81947 20.1805 4.43139 20.564 5.18404C21 6.03969 21 7.15979 21 9.4V16.5M6.2 21H14.3C15.4201 21 15.9802 21 16.408 20.782C16.7843 20.5903 17.0903 20.2843 17.282 19.908C17.5 19.4802 17.5 18.9201 17.5 17.8V9.7C17.5 8.57989 17.5 8.01984 17.282 7.59202C17.0903 7.21569 16.7843 6.90973 16.408 6.71799C15.9802 6.5 15.4201 6.5 14.3 6.5H6.2C5.0799 6.5 4.51984 6.5 4.09202 6.71799C3.71569 6.90973 3.40973 7.21569 3.21799 7.59202C3 8.01984 3 8.57989 3 9.7V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.0799 21 6.2 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-    </button>
+    <button onclick="toggleModal(true)" style="background: none; border: none; color: var(--accent); font-weight: 600; cursor: pointer; text-decoration: underline; font-size: 0.9rem;">See requirements</button>
 </div>
 
-
-        <div id="docs-container">
-            <!-- API Documentation cards will be injected automatically -->
-        </div>
-    </main>
-
-    <script src="docs.js"></script>
-</body>
-</html>
+<!-- Requirements Pop-up Modal (Hidden by Default) -->
+<div id="req-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.7); z-index: 9999; align-items: center; justify-content: center;">
+    <div style="background: var(--bg-sidebar); border: 1px solid var(--border-color); border-radius: 8px; width: 420px; padding: 1.5rem; box-shadow: 0 8px 24px rgba(0,0,0,0.5); position: relative;">
+        
+        <h3 style="color: #ffffff; font-size: 1.2rem; margin-bottom: 1.5rem; font-weight: 600;">Execution Requirements</h3>
+        
+        <!-- Requirement Row 1 -->
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem;">
+            <div>
+                <div style="font-family: monospace; font-weight: 600; color: var(--accent-green);">loadstring()</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted);">Required for script initialization.</div>
+            </div>
