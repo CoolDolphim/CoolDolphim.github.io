@@ -170,7 +170,6 @@ const documentationData = [
 
 ];
 
-// UI Engine: Renders everything cleanly to index.html on load
 function renderDocs() {
     const sidebar = document.getElementById("sidebar-links");
     const container = document.getElementById("docs-container");
@@ -219,7 +218,6 @@ function renderDocs() {
 }
 
 
-// Native Clipboard Copy Engine
 function copyLoadstring() {
     const rawLua = 'local RawmeleonInstaller = loadstring(game:HttpGet("https://raw.githubusercontent.com/CoolDolphim/Rawmeleon-Library/refs/heads/main/LUAModule/SRC.luau"))()';
     
@@ -240,5 +238,15 @@ function copyLoadstring() {
         console.error("Failed to copy source pipeline text: ", err);
     });
 }
+
+function toggleModal(show) {
+    const modal = document.getElementById("req-modal");
+    if (show) {
+        modal.style.display = "flex";
+    } else {
+        modal.style.display = "none";
+    }
+}
+
 
 document.addEventListener("DOMContentLoaded", renderDocs);
